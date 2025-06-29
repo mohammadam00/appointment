@@ -12,7 +12,6 @@ class AppointmentDayView(ListAPIView):
     serializer_class = AppointmentDaySerializer
     # create_reservations()
 
-
 class AppointmentTime(APIView):
     def get(self, request, pk):
         try:
@@ -21,7 +20,6 @@ class AppointmentTime(APIView):
             return Response(times)
         except AppointmentDay.DoesNotExist:
             return Response({"error": "روز انتخاب شده وجود ندارد."}, status=status.HTTP_404_NOT_FOUND)
-
 
 class CreateAppointment(CreateAPIView):
     queryset = Appointment.objects.all()
