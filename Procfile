@@ -1,0 +1,1 @@
+web: gunicorn appointment_doctor_project.wsgi
